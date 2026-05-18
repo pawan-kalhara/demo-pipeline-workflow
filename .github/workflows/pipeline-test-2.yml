@@ -1,0 +1,62 @@
+name: Demo - Self-Hosted Runner
+
+on:
+  workflow_dispatch:
+
+jobs:
+  self-hosted-demo:
+    runs-on: self-hosted  # ← Runs on YOUR configured runner
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      
+      - name: Display runner information
+        run: |
+          echo "================================"
+          echo "Running on SELF-HOSTED runner"
+          echo "================================"
+          echo "Hostname: $(hostname)"
+          echo "OS: $(uname -s)"
+          echo "Architecture: $(uname -m)"
+          echo "CPU Cores: $(nproc)"
+          echo "Memory: $(free -h | grep Mem | awk '{print $2}')"
+          echo "================================"
+      
+      - name: CPU intensive task
+        run: |
+          echo "🔥 Running CPU-intensive workload..."
+          echo "Simulating machine learning training..."
+          
+          # Simulate heavy computation
+          for i in {1..60}; do
+            echo "Processing batch $i/60..."
+            python3 -c "result = sum(range(1000000))" 2>/dev/null || echo "Calculating..."
+            sleep 1
+          done
+          
+          echo "✅ Training complete!"
+      
+      - name: Memory intensive task
+        run: |
+          echo "💾 Running memory-intensive workload..."
+          echo "Processing large dataset..."
+          sleep 15
+          echo "✅ Processing complete!"
+      
+      - name: Build artifacts
+        run: |
+          echo "🔨 Building application..."
+          sleep 10
+          echo "✅ Build successful!"
+      
+      - name: Summary
+        run: |
+          echo "================================"
+          echo "Self-Hosted Runner Demo Complete"
+          echo "Runner Type: SELF-HOSTED"
+          echo "Hardware: YOUR configured specs"
+          echo "Duration: ~90 seconds"
+          echo "Carbon: Calculated using ACTUAL specs"
+          echo "Accuracy: ~95%"
+          echo "================================"
