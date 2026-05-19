@@ -28,8 +28,8 @@ jobs:
           echo " Running workload..."
           
           # Simulate heavy computation
-          for i in {1..60}; do
-            echo "Processing batch $i/20..."
+          for i in {1..15}; do
+            echo "Processing batch $i/15..."
             python3 -c "result = sum(range(1000000))" 2>/dev/null || echo "Calculating..."
             sleep 1
           done
