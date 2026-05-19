@@ -25,8 +25,7 @@ jobs:
       
       - name: CPU intensive task
         run: |
-          echo "🔥 Running CPU-intensive workload..."
-          echo "Simulating machine learning training..."
+          echo " Running workload..."
           
           # Simulate heavy computation
           for i in {1..60}; do
@@ -39,24 +38,14 @@ jobs:
       
       - name: Memory intensive task
         run: |
-          echo "💾 Running memory-intensive workload..."
+          echo "Running workload..."
           echo "Processing large dataset..."
           sleep 8
-          echo "✅ Processing complete!"
+          echo "Processing complete!"
       
       - name: Build artifacts
         run: |
-          echo "🔨 Building application..."
+          echo "Building Test ..."
           sleep 5
-          echo "✅ Build successful!"
-      
-      - name: Summary
-        run: |
-          echo "================================"
-          echo "Self-Hosted Runner Demo Complete"
-          echo "Runner Type: SELF-HOSTED"
-          echo "Hardware: YOUR configured specs"
-          echo "Duration: ~90 seconds"
-          echo "Carbon: Calculated using ACTUAL specs"
-          echo "Accuracy: ~95%"
-          echo "================================"
+          echo "Build successful!"
+
