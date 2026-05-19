@@ -30,7 +30,7 @@ jobs:
           
           # Simulate heavy computation
           for i in {1..60}; do
-            echo "Processing batch $i/60..."
+            echo "Processing batch $i/15..."
             python3 -c "result = sum(range(1000000))" 2>/dev/null || echo "Calculating..."
             sleep 1
           done
@@ -41,13 +41,13 @@ jobs:
         run: |
           echo "💾 Running memory-intensive workload..."
           echo "Processing large dataset..."
-          sleep 15
+          sleep 5
           echo "✅ Processing complete!"
       
       - name: Build artifacts
         run: |
           echo "🔨 Building application..."
-          sleep 10
+          sleep 2
           echo "✅ Build successful!"
       
       - name: Summary
