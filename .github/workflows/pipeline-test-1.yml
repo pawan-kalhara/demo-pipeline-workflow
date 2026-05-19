@@ -23,23 +23,23 @@ jobs:
         run: |
           echo "🔧 Running CI pipeline..."
           echo "Step 1: Install dependencies"
-          sleep 10
+          sleep 3
           
           echo "Step 2: Run tests"
-          sleep 15
+          sleep 5
           
           echo "Step 3: Build application"
-          sleep 20
+          sleep 3
           
           echo "Step 4: Deploy artifacts"
-          sleep 10
+          sleep 5
           
           echo "✅ Pipeline complete!"
       
       - name: Generate test report
         run: |
           echo "Generating test coverage report..."
-          sleep 5
+          sleep 2
           echo "Coverage: 85%"
       
       - name: Run linter
@@ -48,10 +48,4 @@ jobs:
           sleep 5
           echo "No issues found!"
       
-      - name: Summary
-        run: |
-          echo "================================"
-          echo "Demo Workflow Complete"
-          echo "Duration: ~65 seconds"
-          echo "Carbon: ~2-3g CO₂"
-          echo "================================"
+ 
